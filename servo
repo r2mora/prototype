@@ -1,0 +1,25 @@
+import RPi.GPIO as GPIO
+import time
+
+servoPIN = 21
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(servoPIN, GPIO.OUT)
+
+p = GPIO.PWM(servoPIN, 50)
+p.start(1)
+
+def main():
+    while True:
+        p.ChangeDutyCycle(5)
+        time.sleep(1)
+        p.ChangeDutyCycle(8.6)
+        time.sleep(1)
+        p.ChangeDutyCycle(1.5)
+        time.sleep(1)
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        p.stop()
+        GPIO.cleanup()
