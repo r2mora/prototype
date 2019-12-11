@@ -6,9 +6,9 @@
 
 
 
-#define BCM_GPIO 8 // CS_MCP3208 6(BCM_GPIO 25)
+#define BCM_GPIO 8
 
-#define SPI_CHANNEL 0
+#define SPI_CHANNEL 0	// SPI_CE0
 #define SPI_SPEED 1000000 // 1MHz
 
 
@@ -37,7 +37,8 @@ int main(void)
 		return 1;
 	}
 
-	pinMode(BCM_GPIO, OUTPUT);
+	pinMode(
+		, OUTPUT);
 
 	while (1)
 	{
